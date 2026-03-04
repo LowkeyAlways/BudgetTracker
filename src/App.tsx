@@ -6,7 +6,7 @@ function App() {
   const { transactions, addTransaction } = useTransactions();
 
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       <h1>Budget Tracker</h1>
 
       <TransactionForm onAdd={addTransaction} />

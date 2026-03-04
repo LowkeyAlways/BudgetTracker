@@ -7,7 +7,7 @@ type Props = {
 
 export default function TransactionList({ items }: Props) {
   if (items.length === 0) {
-    return <p>Aucune transaction pour le moment.</p>;
+    return <p className="text-white">Aucune transaction pour le moment.</p>;
   }
 
   return (

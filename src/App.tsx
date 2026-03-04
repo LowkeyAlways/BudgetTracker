@@ -1,15 +1,19 @@
-import './App.css'
+import TransactionForm from "./components/TransactionForm";
+import TransactionList from "./components/TransactionList";
+import { useTransactions } from "./hooks/useTransactions";
 
 function App() {
+  const { transactions, addTransaction } = useTransactions();
 
   return (
-    <>
-      <main style={{ padding: 24 }}>
+    <div>
       <h1>Budget Tracker</h1>
-      <p>Setup OK ✅</p>
-    </main>
-    </>
-  )
+
+      <TransactionForm onAdd={addTransaction} />
+      <hr />
+      <TransactionList items={transactions} />
+    </div>
+  );
 }
 
-export default App
+export default App;

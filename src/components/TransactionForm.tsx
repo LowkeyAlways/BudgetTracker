@@ -11,11 +11,19 @@ export default function TransactionForm({ onAdd }: Props) {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
-    if (!label || !amount) return;
-
-    onAdd(label, Number(amount), type);
-
+  
+    const cleanLabel = label.trim();
+    const cleanAmount = Number(amount);
+  
+    if (!cleanLabel || Number.isNaN(cleanAmount) || cleanAmount <= 0) {
+      alert("Mets un libellé + un montant > 0");
+      return;
+    }
+  
+    console.log("SUBMIT OK:", { cleanLabel, cleanAmount, type });
+  
+    onAdd(cleanLabel, cleanAmount, type);
+  
     setLabel("");
     setAmount("");
   }

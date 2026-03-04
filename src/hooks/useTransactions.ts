@@ -13,6 +13,7 @@ export function useTransactions() {
     };
 
     setTransactions((prev) => [newTransaction, ...prev]);
+    console.log("ADD:", newTransaction);
   }
 
   return {

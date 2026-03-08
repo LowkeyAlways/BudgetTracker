@@ -13,11 +13,15 @@ export function useTransactions() {
     };
 
     setTransactions((prev) => [newTransaction, ...prev]);
-    console.log("ADD:", newTransaction);
+  }
+
+  function deleteTransaction(id: string) {
+    setTransactions((prev) => prev.filter((transaction) => transaction.id !== id));
   }
 
   return {
     transactions,
     addTransaction,
+    deleteTransaction,
   };
 }

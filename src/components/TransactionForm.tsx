@@ -31,7 +31,7 @@ export default function TransactionForm({ onAdd }: Props) {
       onSubmit={handleSubmit}
       className="max-w-md mx-auto bg-gray-600 shadow-lg rounded-xl p-6 space-y-4"
     >
-      <h2 className="text-xl font-semibold text-white">
+      <h2 className="text-xl font-semibold text-gray-900">
         Ajouter une transaction
       </h2>
 

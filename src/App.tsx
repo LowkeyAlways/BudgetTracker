@@ -1,10 +1,19 @@
 import TransactionForm from "./components/TransactionForm";
 import TransactionList from "./components/TransactionList";
 import Balance from "./components/Balance";
+import Filter from "./components/Filter";
 import { useTransactions } from "./hooks/useTransactions";
+import { useFilter } from "./hooks/useFilter";
+import { useFilteredTransactions } from "./hooks/useFilteredTransactions";
 
 function App() {
   const { transactions, addTransaction, deleteTransaction } = useTransactions();
+  const { selectedFilter, setSelectedFilter } = useFilter();
+
+  const { filteredTransactions } = useFilteredTransactions({
+    transactions,
+    selectedFilter,
+  });
 
   return (
     <div className="min-h-screen bg-gray-900 p-10">
@@ -15,7 +24,15 @@ function App() {
 
         <Balance items={transactions} />
 
-        <TransactionList items={transactions} onDelete={deleteTransaction} />
+        <Filter
+          selectedFilter={selectedFilter}
+          onChangeFilter={setSelectedFilter}
+        />
+
+        <TransactionList
+          items={filteredTransactions}
+          onDelete={deleteTransaction}
+        />
       </div>
     </div>
   );

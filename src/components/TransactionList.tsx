@@ -18,10 +18,10 @@ export default function TransactionList({ items, onDelete }: Props) {
       <table className="w-full border-collapse mt-5">
         <thead>
           <tr>
-            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600 ">Description</th>
-            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600">Montant</th>
-            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600">Type</th>
-            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600">Action</th>
+            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600 text-gray-900">Description</th>
+            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600 text-gray-900">Montant</th>
+            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600 text-gray-900">Type</th>
+            <th className="border border-gray-500 px-3 py-3 text-center bg-gray-600 text-gray-900">Action</th>
           </tr>
         </thead>
 
